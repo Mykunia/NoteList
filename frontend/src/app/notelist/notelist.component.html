@@ -1,0 +1,53 @@
+<div class="addnote">
+  <h2>Add New Note</h2>
+  <form (ngSubmit)="addNote()" class="note-form" #noteForm="ngForm">
+    <div class="form-group row">
+      <label class="col-form-label" for="title">Title</label>
+      <div class="col-sm-12">
+        <input class="form-control" type="text" id="title" name="title" [(ngModel)]="newNote.title" #title="ngModel" required minlength="3" maxlength="30" [ngClass]="{'is-invalid': title.invalid && (title.dirty || title.touched)}">
+      </div>
+    </div>   
+    <div class="form-group row">
+      <label class="col-form-label" for="text">Text</label>
+      <div class="col-sm-12">
+        <textarea class="form-control" id="text" name="text" [(ngModel)]="newNote.text" #text="ngModel" required minlength="10" maxlength="300" [ngClass]="{'is-invalid': text.invalid && (text.dirty || text.touched)}"></textarea>
+      </div>
+    </div>    
+    <button type="submit" class="btn btn-outline-primary" [disabled]="noteForm.invalid">Add Note</button>
+  </form>
+</div>
+
+
+<div class="notelist">
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Text</th>
+          <th scope="col">Creation Date</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let note of getPaginatedNotes()">
+          <td>{{ note.title }}</td>
+          <td>{{ note.text }}</td>
+          <td>{{ note.creation_date | date:'yyyy-MM-dd'}}</td>
+          <td>
+            <button class="btn btn-outline-danger" (click)="deleteNotes(note.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>    
+    <div class="pagination">
+      <span class="current-page">Page {{ currentPage }} of {{ totalPages }}</span>
+      <div class="pagination-buttons">
+        <button class="btn btn-outline-primary" [disabled]="currentPage === 1" (click)="onPageChange(currentPage - 1)">Previous</button>
+        <button *ngFor="let page of pagesArray" class="btn btn-outline-primary" [disabled]="currentPage === page" (click)="onPageChange(page)">{{ page }}</button>
+        <button class="btn btn-outline-primary" [disabled]="currentPage === totalPages" (click)="onPageChange(currentPage + 1)">Next</button>
+      </div>
+    </div>       
+  </div>
+</div>
+

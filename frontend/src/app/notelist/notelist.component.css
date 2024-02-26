@@ -1,0 +1,95 @@
+:host {
+    --bg-color: oklch(60.65% 0.148 259.99 / 84.62%);
+    --add-btn-color: oklch(83.13% 0.071 249.97 / 55.7%);
+    --dark-text: oklch(42.25% 0.089 240.6);
+    --strip-color: oklch(42.25% 0.089 240.6 / 49.37%);
+}
+
+.addnote {
+    background-color: var(--bg-color);
+    margin: auto;
+    border: solid 0.5rem white;
+    padding: 1.25rem;
+    padding-bottom: 0;
+    box-shadow: 0.25rem 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+    max-width: 30rem;
+}
+
+.notelist {
+    margin-top: 1.25rem;
+}
+
+.note-form {
+    margin-bottom: 1.25rem;
+}
+
+.btn-outline-primary {
+    background-color: white;
+    margin-top: 1rem;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-outline-danger {
+    background-color: #f55b6a62;
+}
+
+.btn-outline-danger:hover {
+    background-color: #c82333;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: auto;    
+    box-shadow: 0.25rem 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+    max-width: 90rem;
+}
+
+.table th, .table td {
+    padding: 0.5rem;
+    vertical-align: middle;
+}
+
+.table th {
+    border-bottom: 1px solid #dee2e6;
+    color: var(--dark-text);
+}
+
+h2{
+    color: white;
+    font-style: oblique;
+    text-shadow: 0.1rem 0.1rem 0.2rem black;
+}
+
+label{
+    color: white;
+    font-weight: bolder;
+    text-shadow: 0.05rem 0.05rem 0.05rem black;
+}
+
+.pagination {
+    display: flex;    
+    margin: auto;  
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90rem;
+}
+
+.current-page {
+    font-size: 1em;
+    color: var(--dark-text);
+    font-weight: 500;
+}
+
+.pagination-buttons {
+    display: flex;
+}
+
+.is-invalid {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+  }
+  

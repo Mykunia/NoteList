@@ -1,0 +1,10 @@
+CREATE DATABASE projectnotelist;
+
+USE projectNoteList;
+
+CREATE TABLE notes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(30) NOT NULL,
+    text VARCHAR(300) NOT NULL,
+    creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
