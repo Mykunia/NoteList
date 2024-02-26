@@ -24,3 +24,5 @@ To add data to the database, go to http://127.0.0.1:8000/notes/create/ and to di
 ### Now, let's start the frontend application.
 
 Open the Frontend directory and initiate the application using the command ng serve.
+
+The public server for the website is located at: https://notelist-task1.web.app
